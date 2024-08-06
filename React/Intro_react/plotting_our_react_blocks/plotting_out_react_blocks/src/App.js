@@ -12,14 +12,14 @@ function App() {
   return (
     <div className="app">
       <Container>
-        <Header />
-        <Navigation />
-        <Main>
-            <SubContents />
-            <SubContents />
-            <SubContents />
-            <Advertisement />
-        </Main>
+      <Header />
+      <Navigation />
+      <Main>
+      <SubContents />
+      <SubContents />
+      <SubContents />
+      <Advertisement />
+      </Main>
       </Container>
     </div>
   );

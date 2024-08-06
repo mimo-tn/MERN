@@ -3,8 +3,8 @@ import styles from './MyComponent.module.css';
 
 const Header = () => {
 return (
-    <header className={styles.topnav}>
-    </header>
+    <div className={styles.topnav}>
+    </div>
 );
 }
 

@@ -1,0 +1,9 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    /* width: 100%; */
+    justify-content: space-between;
+    align-content: space-between;
+    height: auto;     
+}

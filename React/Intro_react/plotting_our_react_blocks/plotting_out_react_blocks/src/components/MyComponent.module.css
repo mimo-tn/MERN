@@ -5,12 +5,12 @@
     margin: 0px auto;
     padding: 20px;
 }
-.topnav {
+.topnav{
     width: 90%;
     height: 150px;
     background-color: green;
 }
-.sidenav {
+.sidenav{
     height: 300px;
     width: 200px;
     background-color: blue;
@@ -18,7 +18,7 @@
     vertical-align: top;
     margin-top: 10px;
 }
-.main {
+.main{
     height: 400px;
     width: auto;
     background-color: red;
@@ -28,7 +28,7 @@
     margin: 10px;
     
 }
-.sub-content {
+.subcontent{
     height: 200px;
     width: 210px;
     background-color: yellow;
@@ -37,7 +37,7 @@
     margin: 10px;
     
 }
-.advertisement {
+.advertisement{
     height: 120px;
     width: auto;
     background-color: purple;
