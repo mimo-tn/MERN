@@ -16,15 +16,17 @@ const ProductList = ({ products, loaded }) => {
                                 <th scope="col">Title</th>
                                 <th scope="col">Price</th>
                                 <th scope="col">Description</th>
+                                <th scope="col">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             {products.map((product, i) => (
                                 <tr key={i}>
                                     <th scope="row">{i + 1}</th>
-                                    <td><Link to={`/products/${product._id}`}>{product.title}</Link></td>
+                                    <td>{product.title}</td>
                                     <td>{product.price}</td>
                                     <td>{product.description}</td>
+                                    <td><Link to={`/${product._id}/edit`}>Edit</Link> | <Link to={`/products/${product._id}`}>Details</Link></td>
                                 </tr>
                             ))}
                         </tbody>

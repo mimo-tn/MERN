@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import styles from './MyComponent.module.css';
-import { useParams , Link } from 'react-router-dom';
+import { useParams , Link , useNavigate} from 'react-router-dom';
 import axios from 'axios';
 
-const OneProduct = () => {
+const OneProduct = ({ fetchProducts }) => {
     const { id } = useParams();
     const [product, setProduct] = useState([]);
     const [loaded, setLoaded] = useState(false);
+    const navigate = useNavigate();
+
     
     useEffect(() => {
         axios.get(`http://localhost:8000/api/Products/${id}`)
@@ -20,7 +22,14 @@ const OneProduct = () => {
             setLoaded(true); // Set to true to avoid infinite loading state
         });
     }, [id]);
-
+    const deleteProduct = (productId) => {
+        axios.delete('http://localhost:8000/api/Products/' + productId)
+            .then(res => {
+                fetchProducts();
+                navigate("/products");
+            })
+            .catch(err => console.error(err));
+    }
     // Extract the first product item if available
     const productItem = product.length > 0 ? product[0] : null;
 
@@ -49,7 +58,11 @@ const OneProduct = () => {
                                 ) : (
                                     <p>No product found.</p>
                                 )}
-                                <Link to="/products" className='btn btn-dark w-25'>Back</Link>
+                                <div className="d-flex flex-start w-50 justify-content-between">
+                                    <Link to="/products" className='btn btn-dark w-25'>Back</Link>
+                                    <button className='btn btn-dark w-25' onClick={(e)=>{deleteProduct(productItem._id)}}>Delete</button>
+                                </div>
+                                
                             </div>
                         </div>
                     </div>

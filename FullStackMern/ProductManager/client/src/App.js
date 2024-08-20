@@ -6,6 +6,7 @@ import MyNav from './components/MyNav';
 import CreateProduct from './components/CreateProduct';
 import ProductList from './components/ProductList';
 import OneProduct from './components/OneProduct';
+import Edit from './components/Edit';
 import { Routes, Route } from 'react-router-dom';
 import axios from 'axios';
 
@@ -38,7 +39,8 @@ function App() {
                       <ProductList products={products} loaded={loaded} />
                   </>
               } />
-              <Route path="/products/:id" element={<OneProduct />}/>
+              <Route path="/products/:id" element={<OneProduct fetchProducts={fetchProducts}/>}/>
+              <Route path="/:id/edit" element={<Edit fetchProducts={fetchProducts}/>}/>
           </Routes>
       </div>
   );
