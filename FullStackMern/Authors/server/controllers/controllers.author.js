@@ -4,7 +4,7 @@ const Author = require("../models/model.author");
 module.exports.createAuthor = (req, res) => {
     Author.create(req.body)
         .then(newAuthor => {
-            res.json({ Author: newAuthor })
+            res.status(201).json({ Author: newAuthor })
         })
         .catch(err => {
             res.status(400).json(err)
